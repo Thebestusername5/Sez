@@ -9,7 +9,9 @@ const __dirname=path.dirname(fileURLToPath(import.meta.url));
 const app=express();
 const client=path.join(__dirname,"..","client");
 app.use(express.static(client));
-app.get("*",(_,res)=>res.sendFile(path.join(client,"index.html")));
+app.get("/{*splat}", (_, res) => {
+    res.sendFile(path.join(client, "index.html"));
+});
 
 const server=http.createServer(app);
 const wss=new WebSocketServer({server});
