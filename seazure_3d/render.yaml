@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: seazure-3d
-    runtime: node
-    rootDir: seazure_3d/server
-    buildCommand: npm install
-    startCommand: npm start
